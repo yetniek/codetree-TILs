@@ -13,3 +13,6 @@ bubble_sort()
 
 for e in arr:
     print(e, end = " ")
+
+# Time Complexity : O(N^2)
+# Memoty Complexity : O(N)
