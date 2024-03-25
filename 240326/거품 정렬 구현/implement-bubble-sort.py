@@ -1,5 +1,5 @@
 n = int(input())
-arr = list(map(int, input().split())
+arr = list(map(int, input().split()))
 
 def bubble_sort():
     is_sorted = False
