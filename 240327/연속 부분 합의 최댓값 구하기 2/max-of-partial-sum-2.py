@@ -1,11 +1,10 @@
 n = int(input())
-datas = list(map(int, input().split()))
-
+arr = list(map(int, input().split()))
 ans = 0
 
-for i in datas: 
-    if ans < 0: 
-        ans = i 
+for i in arr:
+    if ans < 0:
+        ans = i
     else:
         ans += i
 print(ans)
