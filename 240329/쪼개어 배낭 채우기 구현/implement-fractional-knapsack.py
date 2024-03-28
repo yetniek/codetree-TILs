@@ -4,7 +4,7 @@ answer = 0
 
 jewelrys.sort(key=lambda x:-x[1]/x[0])
 
-for w, v in jewelry:
+for w, v in jewelrys:
     if m >= w: # 현재 보석을 다 담을 수 있다면 그대로 담아줌
         m -= w
         answer += v 
