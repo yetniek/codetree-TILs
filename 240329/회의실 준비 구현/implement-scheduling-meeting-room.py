@@ -1,6 +1,6 @@
 n = int(input())
 meetings = [tuple(map(int, input().split())) for _ in range(n)]
-
+
 # 람다 함수 사용해 끝나는 시간 기준으로 정렬
 meetings.sort(key=lambda x: x[1])
 
