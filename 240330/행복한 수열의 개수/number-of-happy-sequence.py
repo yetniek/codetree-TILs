@@ -1,4 +1,4 @@
-n, m = map(int, input().split())) # 3, 2
+n, m = map(int, input().split()) # 3, 2
 grid = [list(map(int, input().split())) for _ in range(n)] 
 # [[1, 2, 2], [1, 3, 4], [1, 2, 3]]
 seq = [0 for _ in range(n)] 
