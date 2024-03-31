@@ -23,8 +23,8 @@ for i in range(n):
     if is_happy_seq():
         num_happy += 1
 
-for i in range(n):
-    for j in range(n):
+for j in range(n):
+    for i in range(n):
         seq[i] = grid[i][j]
 
     if is_happy_seq():
