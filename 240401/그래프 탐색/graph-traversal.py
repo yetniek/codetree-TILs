@@ -10,7 +10,7 @@ def dfs(v):
         if not visited[curr_v]:
             visited[curr_v] = True
             v_cnt += 1
-            def(curr_v)
+            dfs(curr_v)
 
 for i in range(m):
     v1, v2 = map(int, input().split())
