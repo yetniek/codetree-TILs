@@ -23,11 +23,11 @@ for i in range(n):
     if is_happy_seq():
         num_happy += 1
 
-for j in range(n):
-    for i in range(n):
-        seq[i] = grid[i][j]
+vertical_lst = list(zip(*grid))
+for i in range(n):
+    seq = vertical_lst[i][:]
 
     if is_happy_seq():
-        num_happy += 1
+            num_happy += 1
 
 print(num_happy)
