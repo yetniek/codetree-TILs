@@ -21,8 +21,8 @@ for r in range(n):
     for c in range(n):
         for k in range(2 * (n - 1) + 1):
             num_of_gold = get_num_of_gold(r, c, k)
-        
-        if num_of_gold * m >= get_area(k):
-            max_gold = max(max_gold, num_of_gold)
+            
+            if num_of_gold * m >= get_area(k):
+                max_gold = max(max_gold, num_of_gold)
 
 print(max_gold)
