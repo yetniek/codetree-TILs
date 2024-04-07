@@ -24,7 +24,7 @@ def push(x, y):
 def bfs():
     dxs, dys = [-1, 1, 0, 0], [0, 0, -1, 1]
     global ans
-    
+
     while q:
         x, y = q.popleft()
 
@@ -38,4 +38,4 @@ def bfs():
 push(0, 0)
 ans = bfs() 
 
-print(ans)
+print(ans+1)
