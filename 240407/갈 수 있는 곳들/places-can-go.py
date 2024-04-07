@@ -5,10 +5,14 @@ grid = [list(map(int, input().split())) for _ in range(n)]
 s_point = [tuple(map(lambda x: int(x) - 1, input().split())) for _ in range(k)]
 visited = [[False for _ in range(n)] for _ in range(n)]
 q = deque()
-ans = 0
+cnt = 0
 
 def in_range(x, y):
     return 0 <= x and x < n and 0 <= y and y < n
+
+def push(x, y):
+    visited[x][y] = True
+    q.append((x, y))
 
 def can_go(x, y):
     if not in_range(x, y):
@@ -17,13 +21,10 @@ def can_go(x, y):
         return False
     return True
 
-def push(x, y):
-    visited[x][y] = True
-    q.append((x, y))
-
 def bfs():
-    dxs, dys = [-1, 1, 0, 0], [0, 0, -1, 1]
-    global ans
+    global cnt
+    dxs = [-1, 1, 0, 0]
+    dys = [0, 0, -1, 1]
 
     while q:
         x, y = q.popleft()
@@ -33,9 +34,15 @@ def bfs():
 
             if can_go(new_x, new_y):
                 push(new_x, new_y)
-                ans += 1
-    return ans
-push(0, 0)
-ans = bfs() 
 
-print(ans+1)
+
+for start in s_point:
+    r, c = start
+    push(r, c)
+    bfs()
+
+for visit in visited:
+    for v in visit:
+        if v:
+            cnt += 1
+print(cnt)
