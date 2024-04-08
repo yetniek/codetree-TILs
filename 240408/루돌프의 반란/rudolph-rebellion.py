@@ -46,7 +46,7 @@ for turn in range(1, m + 1):
         break
 
     # move_rudolf : find closer santa
-    min_dist = 1000
+    min_dist = 1000000
     min_dist_list_ru = []
 
     for idx in range(1, p + 1):
