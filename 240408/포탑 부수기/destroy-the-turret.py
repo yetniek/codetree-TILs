@@ -104,7 +104,7 @@ def laser(attacker_x, attacker_y, target_x, target_y):
     while q:
         x, y, route = q.popleft()
         # 1-1. 상하좌우(우하좌상) 4개 방향 움직임
-        for dx, dy in zip(dxs[:4], dys[:4]): 
+        for dx, dy in zip(dxs[:4], dys[:4]):
             # 1-3. 가장자리 범위 넘어서면 반대편으로 이동
             nx, ny = (x + dx) % n, (y + dy) % m
 
@@ -190,7 +190,7 @@ def turrent_check():
 n, m, k = map(int, input().split())
 powers = [list(map(int, input().split())) for _ in range(n)]
 is_attack = [[0] * m for _ in range(n)]
-dxs, dys = [1, 0, -1, 0, 1, 1, -1, -1], [0, 1, 0, -1, -1, 1, -1, 1]
+dxs, dys = [0, 1, 0, -1, 1, 1, -1, -1], [1, 0, -1, 0, -1, 1, -1, 1]
 time = 0
 
 for turn in range(k):
