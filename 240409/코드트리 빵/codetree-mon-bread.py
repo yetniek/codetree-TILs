@@ -10,7 +10,7 @@ def in_range(r, c):
     return 0 <= r < n and 0 <= c < n
 
 def can_go(r, c):
-    return in_range(r, c) and not visited[r][c] and grid[r][c] != -1 
+    return in_range(r, c) and not visited[r][c] and grid[r][c] != 2
 
 n, m = map(int, input().split())
 grid = [list(map(int, input().split())) for _ in range(n)]
@@ -71,11 +71,11 @@ def simulation():
                 min_r, min_c = nr, nc
         people[i] = (min_r, min_c)
     
-    # 2. 편의점에 먼저 도착한 사람들에 한해서 앞으로 이동 불가 표시 -> grid : -100 
+    # 2. 편의점에 먼저 도착한 사람들에 한해서 앞으로 이동 불가 표시 -> grid :2
     for i in range(m):
         if people[i] == store[i]:
             pr, pc = people[i]
-            grid[pr][pc] = -1
+            grid[pr][pc] = 2
     
     # 3. 현재 시간 time에 대해 time <= m 을 만족하면 t가 베캠으로 이동
     # time이 m 보다 크면 패스
@@ -96,7 +96,7 @@ def simulation():
                 min_r, min_c = i, j
 
     people[time - 1] = (min_r, min_c)
-    grid[min_r][min_c] = -1
+    grid[min_r][min_c] = 2
 
 def end():
     for i in range(m):
