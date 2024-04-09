@@ -7,10 +7,10 @@ def print_arr(arr):
     print("---------")
 
 def in_range(r, c):
-    return 0 <= r < n and 0 <= c < n
+    return 0 <= r < n and 0 <= nc < n
 
 def can_go(r, c):
-    return in_range(r, c) and not visited[r][c] and grid[r][c] != 2
+    return in_range(r, c) and not visited[r][c] and grid[r][c] != -100 
 
 n, m = map(int, input().split())
 grid = [list(map(int, input().split())) for _ in range(n)]
@@ -56,7 +56,7 @@ def simulation():
     # 1. 격자에 있는 사람들에 한하여 편의점 방향으로 1칸 움직임
     for i in range(m):
         # 격자 밖 or 편의점 도착
-        if people[i] == False or people[i] == store[i]:
+        if people[i] == EMPTY or people[i] == store[i]:
             continue
         bfs(store[i])
 
@@ -71,11 +71,11 @@ def simulation():
                 min_r, min_c = nr, nc
         people[i] = (min_r, min_c)
     
-    # 2. 편의점에 먼저 도착한 사람들에 한해서 앞으로 이동 불가 표시 -> grid :2
+    # 2. 편의점에 먼저 도착한 사람들에 한해서 앞으로 이동 불가 표시 -> grid : -100 
     for i in range(m):
         if people[i] == store[i]:
             pr, pc = people[i]
-            grid[pr][pc] = 2
+            grid[pr][pc] = -100
     
     # 3. 현재 시간 time에 대해 time <= m 을 만족하면 t가 베캠으로 이동
     # time이 m 보다 크면 패스
@@ -96,7 +96,7 @@ def simulation():
                 min_r, min_c = i, j
 
     people[time - 1] = (min_r, min_c)
-    grid[min_r][min_c] = 2
+    grid[min_r][min_c] = - 100
 
 def end():
     for i in range(m):
