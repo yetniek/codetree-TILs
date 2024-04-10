@@ -14,7 +14,7 @@ def can_go(r, c):
 
 n, m = map(int, input().split())
 grid = [list(map(int, input().split())) for _ in range(n)]
-store = [list(map(lambda x: int(x) - 1, input().split())) for _ in range(m)]
+store = [tuple(map(lambda x: int(x) - 1, input().split())) for _ in range(m)]
 
 EMPTY = (-1, -1)
 INI_MAX = sys.maxsize
