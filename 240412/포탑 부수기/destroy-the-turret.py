@@ -132,10 +132,10 @@ def turrent_check():
             if powers[x][y] == 0:
                 continue
 
+            turrent_cnt += 1
             if attack[x][y]:
                 continue
 
-            turrent_cnt += 1
             turrent.append((x, y))
     if turrent_cnt == 1:
         print(max_check())
