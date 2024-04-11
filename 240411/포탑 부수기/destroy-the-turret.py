@@ -71,8 +71,7 @@ def target_setting(attacker_x, attacker_y):
 def laser(attacker_x, attacker_y, target_x, target_y): 
     visited = [[False] * m for _ in range(n)]
 
-    q = deque()
-    q.append((attacker_x, attacker_y, []))
+    q = deque((attacker_x, attacker_y, []))
     visited[attacker_x][attacker_y] = True
 
     while q:
