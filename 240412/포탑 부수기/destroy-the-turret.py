@@ -94,7 +94,7 @@ def laser(attacker_x, attacker_y, target_x, target_y):
                     return True
                 # 경로 체크
                 temp_route = route[:]
-                print(temp_route)
+                # print(temp_route)
                 temp_route.append((nx, ny))
                 q.append((nx, ny, temp_route)) 
     return False
