@@ -3,7 +3,7 @@ from collections import deque
 
 N, M = map(int, input().split())
 grid = [
-    list(map(lambda x: int(x) - 1, input().split()))
+    list(map(int, input().split()))
     for _ in range(N)
 ]
 stores = [
@@ -43,6 +43,7 @@ def bfs(start_pos):
 
     while q:
         x, y = q.popleft()
+
         for i in range(4):
             dx, dy = direct[i]
             nx, ny = x + dx, y + dy
@@ -58,7 +59,6 @@ def simulate():
             continue
 
         bfs(stores[i])
-
         px, py = people[i]
 
         min_dist = INT_MAX
@@ -81,6 +81,7 @@ def simulate():
         return
 
     bfs(stores[time - 1])
+
     min_dist = INT_MAX
     min_x, min_y = -1, -1
     for i in range(N):
