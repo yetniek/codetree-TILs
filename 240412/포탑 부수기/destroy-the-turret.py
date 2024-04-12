@@ -87,7 +87,6 @@ def laser(ax, ay, tx, ty):
     return False
                 
 def shell(ax, ay, tx, ty):
-    
     direct = [(0, 1), (1, 0), (0, -1), (-1, 0), (-1, -1), (1, 1), (-1, 1), (1, -1)]
     grid[tx][ty] -= point
 
