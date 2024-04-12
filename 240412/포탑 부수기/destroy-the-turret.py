@@ -17,7 +17,7 @@ def attacker():
             if grid[i][j] < minp:
                 minp = grid[i][j]
                 ax, ay = i, j
-            elif gird[i][j] == minp:
+            elif grid[i][j] == minp:
                 if attack_time[i][j] > attack_time[ax][ay]:
                     ax, ay = i, j
                 elif attack_time[i][j] == attack_time[ax][ay]:
@@ -100,7 +100,7 @@ def break_check():
             if grid[i][j] < 0:
                 grid[i][j] = 0
 
-def reqair():
+def repair():
     tower = []
     tower_cnt = 0
 
@@ -112,19 +112,27 @@ def reqair():
 
             if attack[i][j]:
                 continue
-            tower.append((i, j))
-            attak[i][j] = True
+            tower.append((i, j)) 
+
+    if tower_cnt == 1:
+        print(max_check())
+        exit(0) 
 
     for x, y in tower:
         grid[x][y] += 1
 
+def max_check():
+    return max([max(line) for line in grid])
 
+time = 0
 for turn in range(K):
     attack = [[False] * N for _ in range(N)]
 
     ax, ay = attacker()
     grid[ax][ay] += (M+N)
     attack[ax][ay] = True
+    attack_time[ax][ay] = time
+    time += 1 
 
     point = grid[ax][ay]
     half_point = point // 2
@@ -138,4 +146,4 @@ for turn in range(K):
     break_check()
     repair()
 
-print(max([max(line) for line in grid]))
+print(max_check())
