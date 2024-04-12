@@ -30,7 +30,7 @@ def attaker_setting():
                     if x + y > a_x + a_y:
                         a_x, a_y = x, y
                     # 1-3. 포탑 위치의 행과 열의 합이 같은게 2개 이상이면
-                    elif x + y == a_x + a_y: 
+                    elif x + y == a_x + a_y:
                         # 1-3-1. 열이 가장 큰 포탑
                         if y > a_y:
                             a_y = y
@@ -131,10 +131,12 @@ def turrent_check():
         for y in range(m):
             if powers[x][y] == 0:
                 continue
-
+            
             turrent_cnt += 1
+            print(turrent_cnt)
             if attack[x][y]:
                 continue
+            print(turrent_cnt)
 
             turrent.append((x, y))
     if turrent_cnt == 1:
