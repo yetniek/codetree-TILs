@@ -14,6 +14,8 @@ def attacker():
 
     for i in range(N):
         for j in range(M):
+            if grid[i][j] == 0:
+                continue
             if grid[i][j] < minp:
                 minp = grid[i][j]
                 ax, ay = i, j
@@ -34,6 +36,10 @@ def target(ax, ay):
 
     for i in range(N):
         for j in range(M):
+            if grid[i][j] == 0:
+                continue
+            if i == ax and j == ay:
+                continue
             if grid[i][j] > maxp:
                 maxp = grid[i][j]
                 tx, ty = i, j
@@ -70,11 +76,11 @@ def laser(ax, ay, tx, ty):
                     grid[nx][ny] -= point
                     attack[nx][ny] = True
                 
-                for rx, ry in route:
-                    grid[rx][ry] -= half_point
-                    attack[rx][ry] = True
+                    for rx, ry in route:
+                        grid[rx][ry] -= half_point
+                        attack[rx][ry] = True
 
-                return True
+                    return True
                 tmp_route = route[:]
                 tmp_route.append((nx, ny))
                 q.append((nx, ny, tmp_route))
