@@ -1,8 +1,5 @@
 from collections import deque
 
-import sys
-sys.stdin = open('input.txt', 'r')
-
 moves = [(-1,0),(0,1),(1,0),(0,-1)]
 
 # 범위 
