@@ -5,8 +5,7 @@ move = [tuple(input().split()) for _ in range(n)]
 dirs = [(1, 0), (-1, 0), (0, -1), (0, 1)]  
 
 x, y = 0, 0
-for m in move:
-    print(m)
+for m in move: 
     d,  c = m 
     if d == 'E':
         dx, dy = dirs[0]  
