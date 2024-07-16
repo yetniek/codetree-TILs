@@ -12,4 +12,7 @@ for i in order:
         dx, dy = dirs[num]
     elif i == 'F':  
         nx, ny = initx + dx, inity + dy 
-print(nx, ny)
+try:
+    print(nx, ny)
+except:
+    print(initx, inity)
