@@ -10,7 +10,7 @@ for i in order:
     elif i == 'R':
         num = (num + 1) % 4
         dx, dy = dirs[num]
-    elif i == 'F':  
+    else: 
         initx, inity = initx + dx, inity + dy 
  
 print(initx, inity)
