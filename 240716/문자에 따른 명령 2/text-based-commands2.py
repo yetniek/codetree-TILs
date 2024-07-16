@@ -11,8 +11,6 @@ for i in order:
         num = (num + 1) % 4
         dx, dy = dirs[num]
     elif i == 'F':  
-        nx, ny = initx + dx, inity + dy 
-try:
-    print(nx, ny)
-except:
-    print(initx, inity)
+        initx, inity = initx + dx, inity + dy 
+ 
+print(initx, inity)
